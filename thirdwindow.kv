@@ -1,0 +1,49 @@
+# Third Window
+<ThirdWindow>:
+    name: "third"
+    employees: employees
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            icon:  'home-variant-outline'
+            name: "screen 2"
+            BoxLayout:
+                size_hint: 1, 1
+                orientation: 'vertical'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+                spacing: 15
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint: 0.9, 0.1
+                    pos_hint: {'center_x': 0.5}
+                    MDLabel:
+                        text: "Employees"
+                        text_color: "gray"
+                        valign: 'middle'
+                        theme_text_color: 'Custom'
+                        font_style: 'H6'
+                    MDIconButton:
+                        icon: 'timer-check-outline'
+                    MDIconButton
+                        icon: 'account-cancel-outline'
+
+                ScrollView:
+                    MDList:
+                        theme_text_color: 'Custom'
+                        id: employees
+        MDBottomNavigationItem:
+            icon: 'account-group-outline'
+            name: "screen 1"
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint: 0.9, 0.1
+                pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                MDLabel:
+                    text: "Present Today"
+                    text_color: "gray"
+                    valign: 'middle'
+                    theme_text_color: 'Custom'
+                    font_style: 'H6'
+                MDIconButton:
+                    icon: 'timer-cancel-outline'
+
+                    

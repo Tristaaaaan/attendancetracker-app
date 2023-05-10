@@ -1,0 +1,51 @@
+# First Window
+
+<FirstWindow>:
+    name: "first"
+    MDGridLayout:
+        cols: 1
+        size_hint: 0.8, None
+        height: dp(200)
+        pos_hint: {'center_x': 0.50, 'center_y': 0.50}
+        MDGridLayout:
+            spacing: 20
+            cols: 1
+            size_hint: 0.5, 0.5
+            BoxLayout:
+                orientation: 'horizontal'
+                spacing: 10
+                MDFlatButton:
+                    text: "Login"
+                    font_name: "RobotoMedium"
+                    font_size: "15dp"
+                    text_color: "white"
+                    theme_text_color: "Custom"
+                    size_hint_x: 0.50
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        root.login()
+                MDIconButton:
+                    icon: 'account-plus'
+                  #  text_color: "white"
+                  #  theme_text_color: "Custom"
+                  #  size_hint_x: 0.50
+                  #  md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        app.root.current = "second"
+                        root.manager.transition.direction = "left"
+
+<ListItemWithCheckbox>:
+    id: the_list_item
+    markup: True
+
+    LeftCheckbox:
+        id: check
+      #  on_release:
+          #  root.mark(check, the_list_item)
+            
+    IconRightWidget:
+        icon: 'trash-can-outline'
+        theme_text_color: "Custom"
+        text_color: 'gray'
+      #  on_release:
+         #   root.delete_item(the_list_item)

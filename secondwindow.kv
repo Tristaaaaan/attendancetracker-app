@@ -1,0 +1,43 @@
+# Second Window
+
+<SecondWindow>:
+    name: "second"
+    MDGridLayout:
+        cols: 1
+        size_hint: 0.8, None
+        height: dp(250)
+        pos_hint: {'center_x': 0.50, 'center_y': 0.50}
+        MDGridLayout:
+            spacing: 20
+            cols: 1
+            size_hint: 0.5, 0.5
+            MDTextField:
+                id: create_name
+                mode: "rectangle"
+                hint_text: "Name"
+                font_size: "15dp"
+            MDTextField:
+                id: employee_id
+                mode: "rectangle"
+                hint_text: "Employee ID"
+                font_size: "15dp"
+            BoxLayout:
+                orientation: 'horizontal'
+                spacing: 10
+                MDIconButton:
+                    icon: 'arrow-left'
+                    on_release:
+                        root.clear()
+                        app.root.current = "first"
+                        root.manager.transition.direction = "right"
+                MDFlatButton:
+                    text: "Register"
+                    font_name: "RobotoMedium"
+                    font_size: "15dp"
+                    text_color: "white"
+                    theme_text_color: "Custom"
+                    size_hint_x: 0.50
+                    md_bg_color: [20/255, 20/255, 20/255, 1]
+                    on_release:
+                        root.signUp()
+                    
